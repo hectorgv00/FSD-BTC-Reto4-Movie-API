@@ -14,7 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   loan.init({
-    id: DataTypes.INTEGER,
+    id_loan: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
+    },
     date_of_loan: DataTypes.DATE,
     id_user: {
       type: DataTypes.INTEGER,

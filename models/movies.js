@@ -14,6 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   movies.init({
+    id_movies:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
+    },
     id_articles: DataTypes.INTEGER,
     duration: {
       type: DataTypes.STRING,

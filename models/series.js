@@ -14,6 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   series.init({
+    id_series:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
+    },
     id_articles: DataTypes.INTEGER,
     episodes: DataTypes.INTEGER,
     rank: DataTypes.INTEGER,
