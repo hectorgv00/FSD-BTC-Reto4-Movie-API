@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      series.hasMany(models.articles);
     }
   }
   series.init({
@@ -20,7 +20,13 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true
     },
-    id_articles: DataTypes.INTEGER,
+  //   articleIdArticles: {
+  //     type: DataTypes.INTEGER,
+  //     references: {
+  //         model: 'articles',
+  //         key: 'id_articles'
+  //     }
+  // },
     episodes: DataTypes.INTEGER,
     rank: DataTypes.INTEGER,
     seasons: DataTypes.INTEGER

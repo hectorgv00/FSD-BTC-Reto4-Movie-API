@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      // articles.hasMany(models.movies)
+      // articles.hasMany(models.series)
+      articles.belongsToMany(models.loan, { through: 'articles_in_loans', foreignKey: 'articleIdArticles'})
     }
   }
   articles.init({
@@ -29,12 +31,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     summary: DataTypes.TEXT,
     date: DataTypes.DATE,
+    
     poster: {
       type:DataTypes.STRING,
       allowNull: true,
       len:[1,255]
     },
-  }, {
+  }, 
+  {
     sequelize,
     modelName: 'articles',
   });

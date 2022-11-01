@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      user.hasMany(models.loan);
+      user.belongsTo(models.rol);
+
     }
   }
   user.init({
@@ -50,7 +52,13 @@ module.exports = (sequelize, DataTypes) => {
         len:[1,20]
       }
     },
-    id_rol: DataTypes.INTEGER
+    rolIdRol:{
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'rols',
+          key: 'id_rol'
+      }
+  }
   }, {
     sequelize,
     modelName: 'user',

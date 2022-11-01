@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      loan.belongsToMany(models.articles, { through: 'articles_in_loans', foreignKey:'loanIdLoan'})
+      loan.belongsTo(models.user);
+
     }
   }
   loan.init({
@@ -21,16 +23,17 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     date_of_loan: DataTypes.DATE,
-    id_user: {
+
+    userIdUser: {
       type: DataTypes.INTEGER,
-      references:{
+      
         references: {
-          model: 'user',
-          key: 'id'
+          model: 'users',
+          key: 'id_user'
         },
         onDelete: 'cascade',
         onUpdate: 'cascade'
-      }
+      
     }
   }, {
     sequelize,

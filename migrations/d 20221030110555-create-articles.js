@@ -2,8 +2,8 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('users', {
-      id_user: {
+    await queryInterface.createTable('articles', {
+      id_articles: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -12,26 +12,15 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      surname: {
-        type: Sequelize.STRING
+      summary: {
+        type: Sequelize.TEXT
       },
-      document: {
-        type: Sequelize.STRING
+      date: {
+        type: Sequelize.DATE
       },
-      address: {
+      is_a_movie:Sequelize.BOOLEAN,
+      poster: {
         type: Sequelize.STRING
-      },
-      email: {
-        type: Sequelize.STRING
-      },
-      id_rol: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'rols',
-          key: 'id_rol'
-        },
-        onDelete: 'cascade',
-        onUpdate: 'cascade'
       },
       createdAt: {
         allowNull: false,
@@ -44,6 +33,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('articles');
   }
 };
