@@ -18,15 +18,31 @@ module.exports = {
         onDelete: 'cascade',
         onUpdate: 'cascade'
       },
+      title: {
+        type: Sequelize.STRING
+      },
+      summary: {
+        type: Sequelize.TEXT
+      },
+      date: {
+        type: Sequelize.DATE
+      },
+      poster: {
+        type: Sequelize.STRING
+      },
       episodes: {
         type: Sequelize.INTEGER
       },
       rank: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT
       },
       seasons: {
         type: Sequelize.INTEGER
       },
+      next_7_days: {
+        type: Sequelize.BOOLEAN
+      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

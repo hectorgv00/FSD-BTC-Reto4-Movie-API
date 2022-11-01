@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // articles.hasMany(models.movies)
-      // articles.hasMany(models.series)
+      articles.hasOne(models.series)
+      articles.hasOne(models.movies)
       articles.belongsToMany(models.loan, { through: 'articles_in_loans', foreignKey: 'articleIdArticles'})
     }
   }
@@ -22,21 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       allowNull: false,
     },
-    name: {
-      type:DataTypes.STRING,
-      allowNull: false,
-      validate:{
-        len:[1,20]
-      }
-    },
-    summary: DataTypes.TEXT,
-    date: DataTypes.DATE,
-    
-    poster: {
-      type:DataTypes.STRING,
-      allowNull: true,
-      len:[1,255]
-    },
+
   }, 
   {
     sequelize,

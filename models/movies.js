@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
 
-      movies.hasMany(models.articles);
+      movies.belongsTo(models.articles);
 
     }
   }
@@ -22,20 +22,30 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true
     },
-  //   articleIdArticles: {
-  //     type: DataTypes.INTEGER,
-  //     references: {
-  //         model: 'articles',
-  //         key: 'id_articles'
-  //     }
-  // },
+    title: {
+      type:DataTypes.STRING,
+      allowNull: false,
+      validate:{
+        len:[1,20]
+      }
+    },
+    genre: DataTypes.STRING,
+    summary: DataTypes.TEXT,
+    date: DataTypes.DATE,
+    
+    poster: {
+      type:DataTypes.STRING,
+      allowNull: true,
+      len:[1,255]
+    },
     duration: {
       type: DataTypes.STRING,
       validate:{
         len:[3,30]
-      }
+      },
     },
-    rank: DataTypes.INTEGER
+    is_on_cinema: DataTypes.BOOLEAN,
+    rank: DataTypes.FLOAT
   }, {
     sequelize,
     modelName: 'movies',
