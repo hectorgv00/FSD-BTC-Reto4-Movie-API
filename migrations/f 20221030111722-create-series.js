@@ -42,6 +42,7 @@ module.exports = {
       next_7_days: {
         type: Sequelize.BOOLEAN
       },
+      is_on_cinema: Sequelize.BOOLEAN,
 
       createdAt: {
         allowNull: false,

@@ -17,7 +17,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/y5Z0WesTjvn59jP6yo459eUsbli.jpg",
         duration:132,
         rank:7.3,
-        is_on_cinema:true
   
       },
       {
@@ -32,7 +31,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
         duration:125,
         rank:7,
-        is_on_cinema:true
       },
       {
         articleIdArticles: 3,
@@ -46,7 +44,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/aGBuiirBIQ7o64FmJxO53eYDuro.jpg",
         duration:95,
         rank:5.8,
-        is_on_cinema:true
       },
 
       {
@@ -61,7 +58,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pHkKbIRoCe7zIFvqan9LFSaQAde.jpg",
         duration:99,
         rank:6.8,
-        is_on_cinema:true
       },
       {
         articleIdArticles: 8,
@@ -75,7 +71,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7ze7YNmUaX81ufctGqt0AgHxRtL.jpg",
         duration:103,
         rank:7.6,
-        is_on_cinema:true
       },
       {
         articleIdArticles: 11,
@@ -89,7 +84,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/mXwC63mlpijqllhoeGnKBGgPtBa.jpg",
         duration:131,
         rank:7.2,
-        is_on_cinema:false
       },
       {
         articleIdArticles: 12,
@@ -103,7 +97,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/druhu1nf5Ad005hw9np1C2YrXHq.jpg",
         duration:106,
         rank:6.7,
-        is_on_cinema:false
       },
       {
         articleIdArticles: 13,
@@ -117,7 +110,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jMyudM6LM9VfIsR8ZRghlSpAdfv.jpg",
         duration:98,
         rank:5.9,
-        is_on_cinema:false
       },
       {
         articleIdArticles: 17,
@@ -131,7 +123,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kb4s0ML0iVZlG6wAKbbs9NAm6X.jpg",
         duration:132,
         rank:7.6,
-        is_on_cinema:false
       },
       {
         articleIdArticles: 18,
@@ -145,7 +136,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/438QXt1E3WJWb3PqNniK0tAE5c1.jpg",
         duration:132,
         rank:7.4,
-        is_on_cinema:false
       },
       {
         articleIdArticles: 19,
@@ -159,7 +149,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/8tABCBpzu3mZbzMB3sRzMEHEvJi.jpg",
         duration:95,
         rank:7.9,
-        is_on_cinema:false
       },
       {
         articleIdArticles: 20,
@@ -173,7 +162,6 @@ module.exports = {
         poster:"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/aPqcQwu4VGEewPhagWNncDbJ9Xp.jpg",
         duration:115,
         rank:6.7,
-        is_on_cinema:true
       },
     ], {});
   },

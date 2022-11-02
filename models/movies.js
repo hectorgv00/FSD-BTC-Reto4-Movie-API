@@ -44,7 +44,6 @@ module.exports = (sequelize, DataTypes) => {
         len:[3,30]
       },
     },
-    is_on_cinema: DataTypes.BOOLEAN,
     rank: DataTypes.FLOAT
   }, {
     sequelize,

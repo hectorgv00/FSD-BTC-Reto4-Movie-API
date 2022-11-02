@@ -9,19 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
-      },
-      summary: {
-        type: Sequelize.TEXT
-      },
-      date: {
-        type: Sequelize.DATE
-      },
-      is_a_movie:Sequelize.BOOLEAN,
-      poster: {
-        type: Sequelize.STRING
-      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -40,7 +40,6 @@ module.exports = {
       rank: {
         type: Sequelize.INTEGER
       },
-      is_on_cinema: Sequelize.BOOLEAN,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

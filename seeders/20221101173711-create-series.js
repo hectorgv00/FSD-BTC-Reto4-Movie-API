@@ -16,6 +16,7 @@ module.exports = {
       episodes:62,
       seasons:5,
       rank:8.8,
+      is_on_cinema:true,
       next_7_days:false
    },
    {
@@ -30,6 +31,7 @@ module.exports = {
     episodes:7,
     seasons:1,
     rank:8.5,
+    is_on_cinema:false,
     next_7_days:true
 
    },
@@ -45,6 +47,7 @@ module.exports = {
     episodes:8,
     seasons:1,
     rank:7.6,
+    is_on_cinema:true,
     next_7_days:false
 
    },
@@ -60,6 +63,7 @@ module.exports = {
     episodes:10,
     seasons:1,
     rank:8.2,
+    is_on_cinema:true,
     next_7_days:false
 
    },
@@ -75,6 +79,7 @@ module.exports = {
     episodes:108,
     seasons:5,
     rank:8,
+    is_on_cinema:false,
     next_7_days:true
 
    },
@@ -90,6 +95,7 @@ module.exports = {
     episodes:73,
     seasons:8,
     rank:8.4,
+    is_on_cinema:false,
     next_7_days:false
    },
    {
@@ -104,6 +110,7 @@ module.exports = {
     episodes:2,
     seasons:1,
     rank:8.3,
+    is_on_cinema:false,
     next_7_days:true
    },
    {
@@ -118,6 +125,7 @@ module.exports = {
     episodes:9,
     seasons:1,
     rank:6.8,
+    is_on_cinema:true,
     next_7_days:false
    },
    {
@@ -132,6 +140,7 @@ module.exports = {
     episodes:131,
     seasons:3,
     rank:7.7,
+    is_on_cinema:true,
     next_7_days:true
    },
   ], {});
