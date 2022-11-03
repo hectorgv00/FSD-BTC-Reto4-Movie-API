@@ -1,11 +1,12 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
+const moviesRoutes = require('./views/moviesRoutes')
 
-const MoviesControllers = require('./views/MoviesControllers')
 
 
-//middleware para las rutas de usuario
-router.use('/movies', MoviesControllers)
+
+router.use('/movies', moviesRoutes);
 
 
 module.exports = router
+

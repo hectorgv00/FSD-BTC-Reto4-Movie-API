@@ -1,16 +1,17 @@
-const express = require('express');
 const colors = require('colors');
+const express = require('express');
 const app = express();
-const PORT =3000;
-const models = require("./models/index");
 const db = require('./db/db');
-const { sequelize } = require('./models/index');
+const router = require('./router');
+const morgan = require('morgan');
 
 
-
+const PORT =3000;
 
 
 app.use(express.json());
+app.use(router);
+app.use(morgan('dev'));
 
 
 
@@ -22,7 +23,7 @@ app.get("/",(req,res)=>{
 app.listen(PORT, ()=>{
     console.log(`El servidor esta up y alojado en el puerto => ${PORT}`.bgGreen.red);
 
-    sequelize.authenticate().then(()=> {
+    db.authenticate().then(()=> {
         console.log("Conectados a la DB")
     }).catch(error => {
         console.log('Se ha producido un error: ' + error)
