@@ -36,8 +36,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     document: {
       type:DataTypes.STRING,
+      unique: true,
       validate:{
-       allowNull:false
+       allowNull:false,
+
       }
     },
     address: {
@@ -48,8 +50,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     email: {
       type:DataTypes.STRING,
+      unique:true,
       validate:{
         allowNull:false
+      
       }
     },
     rolIdRol:{
