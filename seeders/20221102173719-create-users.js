@@ -7,11 +7,11 @@ module.exports = {
       await queryInterface.bulkInsert('users', [
         {
           id_user: 1,
-          name: "Bryanty",
-          surname: "Bickmore",
-          document: "249001884",
-          address: "790 Warbler Drive",
-          email: "bbickmore0@guardian.co.uk",
+          name: "Joan",
+          surname: "Macarra",
+          document: "000000001",
+          address: "El mundo",
+          email: "Joan@macarra.com",
           rolIdRol: 1,
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
