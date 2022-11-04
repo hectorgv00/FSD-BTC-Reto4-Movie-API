@@ -13,6 +13,7 @@ module.exports = {
           address: "El mundo",
           email: "Joan@macarra.com",
           rolIdRol: 1,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -23,6 +24,7 @@ module.exports = {
           address: "80 Bay Terrace",
           email: "srothwell1@tmall.com",
           rolIdRol: 1,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -33,6 +35,7 @@ module.exports = {
           address: "54 Manufacturers Terrace",
           email: "chabeshaw2@hao123.com",
           rolIdRol: 1,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -43,6 +46,7 @@ module.exports = {
           address: "2494 Glendale Street",
           email: "mgaymer3@nytimes.com",
           rolIdRol: 2,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -53,6 +57,7 @@ module.exports = {
           address: "4555 Lakeland Road",
           email: "cblagden4@artisteer.com",
           rolIdRol: 2,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -63,6 +68,7 @@ module.exports = {
           address: "1183 Lotheville Alley",
           email: "cspeck5@paypal.com",
           rolIdRol: 3,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -73,6 +79,7 @@ module.exports = {
           address: "1796 Badeau Avenue",
           email: "awhiffin6@hibu.com",
           rolIdRol: 1,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -83,6 +90,7 @@ module.exports = {
           address: "03487 Summit Junction",
           email: "lahrendsen7@cnbc.com",
           rolIdRol: 2,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -93,6 +101,7 @@ module.exports = {
           address: "811 Morrow Terrace",
           email: "cphippen8@multiply.com",
           rolIdRol: 2,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -103,6 +112,7 @@ module.exports = {
           address: "5 Shoshone Drive",
           email: "echang9@spiegel.de",
           rolIdRol: 3,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -113,6 +123,7 @@ module.exports = {
           address: "99896 Katie Lane",
           email: "cwilloughbya@bloglovin.com",
           rolIdRol: 3,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -123,6 +134,7 @@ module.exports = {
           address: "49 Weeping Birch Crossing",
           email: "wedneyb@marriott.com",
           rolIdRol: 2,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -133,6 +145,7 @@ module.exports = {
           address: "65 Ridgeview Point",
           email: "emaccaffertyc@independent.co.uk",
           rolIdRol: 3,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -143,6 +156,7 @@ module.exports = {
           address: "5084 Vera Way",
           email: "bfloyded@mapy.cz",
           rolIdRol: 3,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -153,6 +167,7 @@ module.exports = {
           address: "2 Charing Cross Court",
           email: "shanburrye@forbes.com",
           rolIdRol: 2,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -163,6 +178,7 @@ module.exports = {
           address: "996 Anderson Point",
           email: "sdenslowf@dagondesign.com",
           rolIdRol: 1,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -173,6 +189,7 @@ module.exports = {
           address: "56 Elgar Terrace",
           email: "sshermeg@webnode.com",
           rolIdRol: 2,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -183,6 +200,7 @@ module.exports = {
           address: "325 Gulseth Crossing",
           email: "sdautryh@yellowbook.com",
           rolIdRol: 3,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -193,6 +211,7 @@ module.exports = {
           address: "38469 Spohn Alley",
           email: "hlebboni@whitehouse.gov",
           rolIdRol: 3,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }, {
@@ -203,6 +222,7 @@ module.exports = {
           address: "25 Harbort Way",
           email: "rlabordaj@bigcartel.com",
           rolIdRol: 2,
+          password: "1234554321OK",
           createdAt: "2022-01-11",
           updatedAt: "2022-01-11"
         }

@@ -24,6 +24,10 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
+      password:{
+        type:Sequelize.STRING,
+      },
+  
       id_rol: {
         type: Sequelize.INTEGER,
         references: {

@@ -1,10 +1,10 @@
 const { Op } = require("sequelize");
 const models = require("../models/index");
-const MoviesControllers = {};
+const MoviesEndpoints = {};
 
 // Encuentra película por id
 
-MoviesControllers.getMoviesID = async (req, res) => {
+MoviesEndpoints.getMoviesID = async (req, res) => {
   try {
     let { id } = req.params;
     let resp = await models.movies.findAll({
@@ -20,7 +20,7 @@ MoviesControllers.getMoviesID = async (req, res) => {
 
 // Encuentra las películas mejor valoradas
 
-MoviesControllers.getMoviesTopRated = async (req, res) => {
+MoviesEndpoints.getMoviesTopRated = async (req, res) => {
     try {
         let resp = await models.movies.findAll({where:{
             rank:{
@@ -35,7 +35,7 @@ MoviesControllers.getMoviesTopRated = async (req, res) => {
 
 // Encuentra las películas por título
 
-MoviesControllers.getMoviestitle = async (req,res) =>{
+MoviesEndpoints.getMoviestitle = async (req,res) =>{
   try {
     let { title } = req.params;
         let resp = await models.movies.findAll({
@@ -51,7 +51,7 @@ MoviesControllers.getMoviestitle = async (req,res) =>{
 
 // Encuentra las películas por género
 
-MoviesControllers.getMoviesGenre = async (req,res) =>{
+MoviesEndpoints.getMoviesGenre = async (req,res) =>{
   try {
     let { genre } = req.params;
         let resp = await models.movies.findAll({
@@ -66,4 +66,4 @@ MoviesControllers.getMoviesGenre = async (req,res) =>{
 }}
 
 
-module.exports = MoviesControllers;
+module.exports = MoviesEndpoints;

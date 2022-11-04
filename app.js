@@ -5,7 +5,7 @@ const db = require('./db/db');
 const router = require('./router');
 const morgan = require('morgan');
 const { sequelize } = require('./models');
-
+const logMiddleware = require('./middleware/log.middleware');
 
 const PORT =3000;
 
@@ -13,13 +13,10 @@ const PORT =3000;
 app.use(express.json());
 app.use(router);
 app.use(morgan('dev'));
+app.use(logMiddleware)
 
 
 
-
-app.get("/",(req,res)=>{
-    res.send("Funciona")
-})
 
 app.listen(PORT, ()=>{
     console.log(`El servidor esta up y alojado en el puerto => ${PORT}`.bgGreen.red);

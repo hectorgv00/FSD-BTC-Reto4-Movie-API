@@ -1,11 +1,11 @@
 const { Op } = require("sequelize");
 const models = require("../models/index");
-const SeriesControllers = {};
+const SeriesEndpoints = {};
 
 // Encuentra series por id
 
 
-SeriesControllers.getSeriesID = async (req, res) => {
+SeriesEndpoints.getSeriesID = async (req, res) => {
     try {
       let { id } = req.params;
       let resp = await models.series.findAll({
@@ -22,7 +22,7 @@ SeriesControllers.getSeriesID = async (req, res) => {
 // Encuentra las series mejor valoradas
 
 
-SeriesControllers.getSeriesTopRated = async (req, res) => {
+SeriesEndpoints.getSeriesTopRated = async (req, res) => {
     try {
         let resp = await models.series.findAll({where:{
             rank:{
@@ -38,7 +38,7 @@ SeriesControllers.getSeriesTopRated = async (req, res) => {
 // Encuentra las series por título
 
 
-SeriesControllers.getSeriestitle = async (req,res) =>{
+SeriesEndpoints.getSeriestitle = async (req,res) =>{
     try {
       let { title } = req.params;
           let resp = await models.series.findAll({
@@ -54,7 +54,7 @@ SeriesControllers.getSeriestitle = async (req,res) =>{
 
 // Encuentra las series por capitulo emitido
 
-SeriesControllers.getSeriesEmitido = async (req,res) =>{
+SeriesEndpoints.getSeriesEmitido = async (req,res) =>{
     try {
           let resp = await models.series.findAll({
               where:{
@@ -69,7 +69,7 @@ SeriesControllers.getSeriesEmitido = async (req,res) =>{
 
 // Encuentra las series por capitulo cinema
 
-SeriesControllers.getSeriesCinema = async (req,res) =>{
+SeriesEndpoints.getSeriesCinema = async (req,res) =>{
     try {
           let resp = await models.series.findAll({
               where:{
@@ -82,4 +82,4 @@ SeriesControllers.getSeriesCinema = async (req,res) =>{
           res.send(error);        
   }}
 
-module.exports = SeriesControllers;
+module.exports = SeriesEndpoints;
