@@ -122,4 +122,28 @@ userEndpoints.findCurrentUser = async (req,res) =>{
     }
 }
 
+// Modificar tu usuario
+
+userEndpoints.modifyCurrentUser = async (req,res) => {
+  const { authorization } = req.headers;
+  const [strategy, jwt] = authorization.split(" ");
+  const payload = jsonwebtoken.verify(jwt, process.env.JWT_SECRET);
+  if (req.body.email !== payload.email) {
+    throw new Error ("You can only modify your account")
+    return
+  }
+  try {
+    let data = req.body;
+    console.log(`${data}`.bgCyan);
+    let resp = await models.user.update({
+      name: data.name,
+      surname: data.surname,
+      address: data.address
+    },{where: {email:data.email}})
+    res.send("Se ha actualizado el registro correctamente")
+  } catch (error) {
+    res.send(error)
+  }
+}
+
 module.exports = userEndpoints;
