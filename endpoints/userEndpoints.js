@@ -8,16 +8,6 @@ const {
   encryptPassword,
 } = require("../services/authorization.services");
 
-// Prueba para encontrar todos los users. //TODO: borrar esta parte
-
-userEndpoints.findAll = async (req, res) => {
-  try {
-    const users = await models.user.findAll();
-    return res.status(200).json(users);
-  } catch (error) {
-    res.send(error);
-  }
-};
 
 // Registro de usuario
 
@@ -97,5 +87,19 @@ userEndpoints.login = async (req, res) => {
       jwt: jwt,
     });
 }
+
+// -------------------------------------------------------------------------------------
+
+// Traer datos de perfil de usuario
+
+userEndpoints.findUser = async (req,res) => {
+  try {
+    const users = await models.user.findAll();
+    return res.status(200).json(users);
+  } catch (error) {
+    res.send(error);
+  }
+}
+
 
 module.exports = userEndpoints;
