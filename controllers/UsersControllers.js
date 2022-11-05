@@ -14,9 +14,8 @@ const { where } = require("sequelize");
 
 const authLoginController = async (req, res) => {
     const { email, password } = req.body;
-    console.log(email);
     const userFound = await models.user.findAll({where: {email: email,},
-    });;
+    });
     if (!userFound) {
       res.status(401).json({ message: "Password or email is incorrect user not found" });
       return;

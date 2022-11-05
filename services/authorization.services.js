@@ -25,7 +25,7 @@ const assertValidPasswordService = (pass) => {
 // Makes sure that the email is unique
 const assertEmailIsUniqueService= async(email)=> {
     // validate email is unique
-    const existingMail = await models.articles.findOne({ email: email });
+    const existingMail = await models.articles.findAll({ email: email });
     if (existingMail) {
       throw new Error("The email you are trying to log on with is already in our system");
     }
