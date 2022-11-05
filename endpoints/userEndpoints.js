@@ -46,7 +46,7 @@ userEndpoints.register = async (req, res) => {
       document: userBody.document,
       address: userBody.address,
     });
-    res.send(`El usuario con el email ${email} ha sido creado satisfactoriamente`)
+    res.send(`The user with email: ${email} has been created successfully`)
 } catch (error) {
     res.send(error);
   }
@@ -144,6 +144,26 @@ userEndpoints.modifyCurrentUser = async (req,res) => {
   } catch (error) {
     res.send(error)
   }
+}
+
+// Eliminar usuario(Solamente el Admin puede hacerlo)
+
+userEndpoints.deleteUser = async(req,res) => {
+try {
+  let userMail = req.params.mail;
+  let resp = await models.user.destroy({
+    where: {
+      email: userMail,
+    }
+  })
+  if(resp === 1){
+    res.send("User deleted successfully")
+  }else{
+    res.send("There is not user with that email");
+  }
+} catch (error) {
+  res.send(error)
+}
 }
 
 module.exports = userEndpoints;

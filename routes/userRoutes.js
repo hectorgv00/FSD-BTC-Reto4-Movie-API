@@ -10,6 +10,7 @@ router.post("/register", userEndpoints.register)
 router.get("/all", authBearerMiddleware, isAdmin, userEndpoints.findAll);
 router.get('/findcurrentuser',authBearerMiddleware, userEndpoints.findCurrentUser);
 router.put('/modify',authBearerMiddleware, userEndpoints.modifyCurrentUser);
+router.delete('/deleteprofile/:mail',authBearerMiddleware, isAdmin, userEndpoints.deleteUser);
 
 
 
