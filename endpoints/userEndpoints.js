@@ -2,6 +2,7 @@ const { Op } = require("sequelize");
 const models = require("../models/index");
 const userEndpoints = {};
 const jsonwebtoken = require("jsonwebtoken");
+
 const {
   assertValidPasswordService,
   assertEmailIsValid,
@@ -90,16 +91,35 @@ userEndpoints.login = async (req, res) => {
 
 // -------------------------------------------------------------------------------------
 
-// Traer datos de perfil de usuario
+// Traer todos los datos de perfil de usuario (Solamente Admin puede)
 
-userEndpoints.findUser = async (req,res) => {
+userEndpoints.findAll = async (req, res) => {
   try {
-    const users = await models.user.findAll();
-    return res.status(200).json(users);
-  } catch (error) {
-    res.send(error);
-  }
-}
+      const users = await models.user.findAll();
+      return res.status(200).json(users);
+    } catch (error) {
+      res.send(error);
+    }
+};
 
+// Traer los datos de tu usuario
+
+userEndpoints.findCurrentUser = async (req,res) =>{
+  const { authorization } = req.headers;
+  const [strategy, jwt] = authorization.split(" ");
+  const payload = jsonwebtoken.verify(jwt, process.env.JWT_SECRET);
+  try {
+      let  id  = payload.id_user;
+      console.log(`${id}`.bgCyan);
+      let resp = await models.user.findAll({
+        where: {
+          id_user: id,
+        },
+      });
+      res.send(resp);
+    } catch (error) {
+      res.send(error);
+    }
+}
 
 module.exports = userEndpoints;
