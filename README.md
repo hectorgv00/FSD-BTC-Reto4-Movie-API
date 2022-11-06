@@ -170,6 +170,51 @@ Usamos el modelo vista-controlador para estructurar el proyecto. **Creamos un CR
         /movies/genre/:genre
         ````
 
+    * **seriesControllers.js**: En este archivo creamos las funciones de cada endpoint:
+
+        * **getSeriesID**: Obtenemos una serie por su ID. 
+        
+        La ruta de acceso será 
+        ````
+        /series/:id 
+        ````
+        <br>
+
+        * **getSeriesTopRated**: Obtenemos las series más valoradas. 
+        
+        La ruta de acceso será 
+        ````
+        /series/toprated.
+        ````
+        <br>
+
+        * **getSeriestitle**: Obtenemos un listado de las series filtrado por el titulo. 
+        
+        La ruta de acceso será 
+        
+        ````
+        /series/title/:title
+        ````
+
+        <br>
+
+        * **getSeriesEmitido**: Obtenemos un listado de las series que tendrán un capítulo en los próximos 7 días. 
+        
+        La ruta de acceso será 
+        ````
+        /series/emision/
+        ````
+        <br>
+
+        * **getSeriesCinema**: Obtenemos un listado de las series que tendrán un pase en un cine o teatro. 
+        
+        La ruta de acceso será 
+        ````
+        /series/cinema/
+        ````
+
+        <br>
+
     * **UsersControllers.js**: En este archivo creamos las funciones de cada endpoint:
         * **register**: Gestionamos el registro en nuestra API. Existe un mínimo de seguridad en la contraseña creada (mínimo 8 caracteres). 
         
