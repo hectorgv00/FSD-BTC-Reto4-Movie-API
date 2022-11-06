@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const SeriesEndpoints = require('../endpoints/seriesEndpoints');
+const SeriesControllers = require('../controllers/SeriesControllers');
 
 
-router.get('/toprated', SeriesEndpoints.getSeriesTopRated);
-router.get('/emision/', SeriesEndpoints.getSeriesEmitido);
-router.get('/cinema/', SeriesEndpoints.getSeriesCinema);
-router.get('/:id', SeriesEndpoints.getSeriesID);
-router.get('/title/:title', SeriesEndpoints.getSeriestitle);
+router.get('/toprated', SeriesControllers.getSeriesTopRated);
+router.get('/emision/', SeriesControllers.getSeriesEmitido);
+router.get('/cinema/', SeriesControllers.getSeriesCinema);
+router.get('/:id', SeriesControllers.getSeriesID);
+router.get('/title/:title', SeriesControllers.getSeriestitle);
 
 
 module.exports = router;

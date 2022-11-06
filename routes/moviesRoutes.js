@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const MoviesEndpoints = require('../endpoints/moviesEndpoints');
+const MoviesControllers = require('../controllers/moviesControllers');
 
-router.get('/toprated', MoviesEndpoints.getMoviesTopRated);
-router.get('/genre/:genre', MoviesEndpoints.getMoviesGenre);
-router.get('/title/:title', MoviesEndpoints.getMoviestitle);
-router.get('/id/:id', MoviesEndpoints.getMoviesID);
+router.get('/toprated', MoviesControllers.getMoviesTopRated);
+router.get('/genre/:genre', MoviesControllers.getMoviesGenre);
+router.get('/title/:title', MoviesControllers.getMoviestitle);
+router.get('/id/:id', MoviesControllers.getMoviesID);
 
 
 

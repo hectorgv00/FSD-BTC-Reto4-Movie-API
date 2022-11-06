@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const userEndpoints = require('../endpoints/userEndpoints');
+const usersControllers = require('../controllers/usersControllers');
 const { authBearerMiddleware, isAdmin } = require("../middleware/auth.middleware")
 
 
 
-router.post("/login", userEndpoints.login)
-router.post("/register", userEndpoints.register)
-router.get("/all", authBearerMiddleware, isAdmin, userEndpoints.findAll);
-router.get('/findcurrentuser',authBearerMiddleware, userEndpoints.findCurrentUser);
-router.put('/modify',authBearerMiddleware, userEndpoints.modifyCurrentUser);
-router.delete('/deleteprofile/:mail',authBearerMiddleware, isAdmin, userEndpoints.deleteUser);
+router.post("/login", usersControllers.login)
+router.post("/register", usersControllers.register)
+router.get("/all", authBearerMiddleware, isAdmin, usersControllers.findAll);
+router.get('/findcurrentuser',authBearerMiddleware, usersControllers.findCurrentUser);
+router.put('/modify',authBearerMiddleware, usersControllers.modifyCurrentUser);
+router.delete('/deleteprofile/:mail',authBearerMiddleware, isAdmin, usersControllers.deleteUser);
 
 
 

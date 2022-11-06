@@ -1,31 +1,76 @@
+const { Op } = require("sequelize");
+const models = require("../models/index");
+const usersControllers = {};
 const jsonwebtoken = require("jsonwebtoken");
+
 const {
   assertValidPasswordService,
-  assertEmailIsUniqueService,
   assertEmailIsValid,
-  createUserService,
-  encryptPassword
+  encryptPassword,
 } = require("../services/authorization.services");
 
-const models = require("../models/index");
-const { where } = require("sequelize");
 
+// Registro de usuario
 
+usersControllers.register = async (req, res) => {
+  try {
+    let userBody = req.body;
+    let password = userBody.password;
+    let email = userBody.email;
+// Validamos que la contraseña tenga el formato deseado
+    try {
+      assertValidPasswordService(password);
+    } catch (error) {
+      console.error(error);
+      res.status(400).json({
+        message: `Invalid password. Password must be at least 8 characters long, must have at least one lower case letter, must have at least one upper case letter must have at least one number  ${error.message}`,
+      });
+      return;
+    }
+// Validamos que el email tenga el formato deseado
+    try {
+        assertEmailIsValid(email);
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ message: `Email is invalid: ${error.message}` });
+        return;
+      }    
+      
+      const hash = encryptPassword(password);
+      
+      await models.user.create({
+      email: userBody.email,
+      name: userBody.name,
+      surname: userBody.surname,
+      password: hash,
+      document: userBody.document,
+      address: userBody.address,
+    });
+    res.send(`The user with email: ${email} has been created successfully`)
+} catch (error) {
+    res.send(error);
+  }
+};
 
-const authLoginController = async (req, res) => {
-    const { email, password } = req.body;
-    const userFound = await models.user.findAll({where: {email: email,},
+// -----------------------------------------------------------------------------------
+
+// Login de usuario
+
+usersControllers.login = async (req, res) => {
+    let userBody = req.body;
+    let password = userBody.password;
+    let email = userBody.email;
+    const userFound = await models.user.findOne({where: {email: email,}
     });
     if (!userFound) {
-      res.status(401).json({ message: "Password or email is incorrect user not found" });
+      res.status(401).json({ message: "Password or email is incorrect" });
       return;
     }
     const hashedPassword = encryptPassword(password);
     if (hashedPassword !== userFound.password) {
-      res.status(401).json({ message: "Password or email is incorrect password not found" });
+      res.status(401).json({ message: "Password or email is incorrect" });
       return;
     }
-  
     const secret = process.env.JWT_SECRET || '';
   
     if (secret.length < 10) {
@@ -33,7 +78,7 @@ const authLoginController = async (req, res) => {
     }
   
     const jwt = jsonwebtoken.sign({
-      name: userFound.uuid,
+      id_user: userFound.id_user,
       email: userFound.email,
       rolIdRol: userFound.rolIdRol
     }, secret);
@@ -42,57 +87,83 @@ const authLoginController = async (req, res) => {
       message: "Login successful",
       jwt: jwt,
     });
-  }
-  
-
-
-
-
-
-const authRegisterController = async (req, res) => {
-  const body = req.body;
-//   Validate that the password is correct and send a message if it is not
-  try {
-    assertValidPasswordService(body.password);
-  } catch (error) {
-    console.error(error);
-    res.status(400).json({
-        message: `Invalid password. Password must be at least 8 characters long, must have at least one lower case letter, must have at least one upper case letter must have at least one number  ${error.message}`,
-      });
-    return;
-  }
-
-  // validate email is correct
-  try {
-    assertEmailIsValid(body.email);
-  } catch (error) {
-    console.error(error);
-    res.status(400).json({ message: `Email is invalid: ${error.message}` });
-    return;
-  }
-//   Validates that email is not already at the system
-try {
-    assertEmailIsUniqueService(body.email);
-} catch (error) {
-    console.error(error);
-    res.status(400).json({ message: `Email is already at the system:  ${error.message}` });
-    return;
 }
-  // save user
+
+// -------------------------------------------------------------------------------------
+
+// Traer todos los datos de perfil de usuario (Solamente Admin puede)
+
+usersControllers.findAll = async (req, res) => {
   try {
-    const userCreated = await createUserService(body);
-    res.status(201).json(userCreated);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: error.message });
+      const users = await models.user.findAll();
+      return res.status(200).json(users);
+    } catch (error) {
+      res.send(error);
+    }
+};
+
+// Traer los datos de tu usuario
+
+usersControllers.findCurrentUser = async (req,res) =>{
+  const { authorization } = req.headers;
+  const [strategy, jwt] = authorization.split(" ");
+  const payload = jsonwebtoken.verify(jwt, process.env.JWT_SECRET);
+  try {
+      let  id  = payload.id_user;
+      console.log(`${id}`.bgCyan);
+      let resp = await models.user.findAll({
+        where: {
+          id_user: id,
+        },
+      });
+      res.send(resp);
+    } catch (error) {
+      res.send(error);
+    }
+}
+
+// Modificar tu usuario
+
+usersControllers.modifyCurrentUser = async (req,res) => {
+  const { authorization } = req.headers;
+  const [strategy, jwt] = authorization.split(" ");
+  const payload = jsonwebtoken.verify(jwt, process.env.JWT_SECRET);
+  if (req.body.email !== payload.email) {
+    throw new Error ("You can only modify your account")
+    return
   }
+  try {
+    let data = req.body;
+    console.log(`${data}`.bgCyan);
+    let resp = await models.user.update({
+      name: data.name,
+      surname: data.surname,
+      address: data.address
+    },{where: {email:data.email}})
+    res.send("Se ha actualizado el registro correctamente")
+  } catch (error) {
+    res.send(error)
+  }
+}
 
+// Eliminar usuario(Solamente el Admin puede hacerlo)
 
+usersControllers.deleteUser = async(req,res) => {
+try {
+  let userMail = req.params.mail;
+  let resp = await models.user.destroy({
+    where: {
+      email: userMail,
+    }
+  })
+  if(resp === 1){
+    res.send("User deleted successfully")
+  }else{
+    res.send("There is not user with that email");
+  }
+} catch (error) {
+  res.send(error)
+}
+}
 
-
-};
-
-module.exports = {
-    authRegisterController,
-    authLoginController
-};
+module.exports = usersControllers;

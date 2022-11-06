@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       articles.hasOne(models.series)
       articles.hasOne(models.movies)
-      articles.belongsToMany(models.loan, { through: 'articles_in_loans', foreignKey: 'articleIdArticles'})
+      articles.hasMany(models.loan)   
+
     }
   }
   articles.init({
