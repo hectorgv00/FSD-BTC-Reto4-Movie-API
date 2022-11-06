@@ -110,7 +110,6 @@ usersControllers.findCurrentUser = async (req,res) =>{
   const payload = jsonwebtoken.verify(jwt, process.env.JWT_SECRET);
   try {
       let  id  = payload.id_user;
-      console.log(`${id}`.bgCyan);
       let resp = await models.user.findAll({
         where: {
           id_user: id,
@@ -134,7 +133,6 @@ usersControllers.modifyCurrentUser = async (req,res) => {
   }
   try {
     let data = req.body;
-    console.log(`${data}`.bgCyan);
     let resp = await models.user.update({
       name: data.name,
       surname: data.surname,

@@ -8,8 +8,6 @@ const loansRoutes = require('./routes/loansRoutes');
 const { authBearerMiddleware, isValidRoleAdmin } = require("./middleware/auth.middleware")
 
 
-// TODO: crear los controladores
-
 
 router.use('/movies', moviesRoutes);
 router.use('/series', seriesRoutes);
