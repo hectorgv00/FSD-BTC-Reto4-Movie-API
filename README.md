@@ -278,7 +278,7 @@ Usamos el modelo vista-controlador para estructurar el proyecto. **Creamos un CR
         
         <br>
         
-        * **deleteUser**: Eliminamos un usuario por ID. Solamente lo puede hacer el Admin. La ruta de acceso será 
+        * **deleteUser**: Eliminamos un usuario por su email. Solamente lo puede hacer el Admin. La ruta de acceso será 
         ````
         /users/deleteprofile/:email
         ````
@@ -312,7 +312,7 @@ Usamos el modelo vista-controlador para estructurar el proyecto. **Creamos un CR
 
         * **myloans**: El usuario podrá ver su lista de pedidos. La ruta de acceso será 
         ````
-        /loans/newloan/
+        /loans/myloans/
         ````
 
         <br>
