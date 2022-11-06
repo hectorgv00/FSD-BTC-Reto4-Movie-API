@@ -228,7 +228,7 @@ Usamos el modelo vista-controlador para estructurar el proyecto. **Creamos un CR
          ````
         La ruta de acceso será 
         ````
-        */users/modify*
+        /users/modify
         ````
         
         <br>
