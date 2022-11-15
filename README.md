@@ -157,7 +157,7 @@ Usamos el modelo vista-controlador para estructurar el proyecto. **Creamos un CR
         ````
         * **getMoviesTopRated**: Obtenemos las películas más valoradas. La ruta de acceso será 
         ````
-        /movies/toprated.
+        /movies/toprated
         ````
         * **getMoviestitle**: Obtenemos un listado de las películas filtrado por el titulo de la película. La ruta de acceso será 
         
@@ -184,7 +184,7 @@ Usamos el modelo vista-controlador para estructurar el proyecto. **Creamos un CR
         
         La ruta de acceso será 
         ````
-        /series/toprated.
+        /series/toprated
         ````
         <br>
 
