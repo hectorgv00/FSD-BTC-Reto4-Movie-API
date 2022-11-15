@@ -1,5 +1,12 @@
 * *Endpoints*
 
+ * **Para la comprobacion del proyecto se deberá poner la siguiente dirección en postman/similares
+      ````
+      localhost:3000
+      ````
+      
+      añadiendo el resto de la ruta dependiendo del endpoint deseado
+
     * **moviesControllers.js**: En este archivo creamos las funciones de cada endpoint:
         * **getMoviesID**: Obtenemos una película por su ID. La ruta de acceso será 
         ````
