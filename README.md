@@ -1,6 +1,6 @@
 * *Endpoints*
 
- * **Para la comprobacion del proyecto se deberá poner la siguiente dirección en postman/similares
+ * Para la comprobacion del proyecto se deberá poner la siguiente dirección en postman/similares
       ````
       localhost:3000
       ````
