@@ -8,28 +8,28 @@
       añadiendo el resto de la ruta dependiendo del endpoint deseado
 
     * **moviesControllers.js**: En este archivo creamos las funciones de cada endpoint:
-        * **getMoviesID**: Obtenemos una película por su ID. La ruta de acceso será 
+        * **GET getMoviesID**: Obtenemos una película por su ID. La ruta de acceso será 
         ````
         /movies/id/:id 
         ````
-        * **getMoviesTopRated**: Obtenemos las películas más valoradas. La ruta de acceso será 
+        * **GET getMoviesTopRated**: Obtenemos las películas más valoradas. La ruta de acceso será 
         ````
         /movies/toprated
         ````
-        * **getMoviestitle**: Obtenemos un listado de las películas filtrado por el titulo de la película. La ruta de acceso será 
+        * **GET getMoviestitle**: Obtenemos un listado de las películas filtrado por el titulo de la película. La ruta de acceso será 
         
         ````
         /movies/title/:title
         ````
 
-        * **getMoviesGenre**: Obtenemos un listado de las películas filtrado por el genero de la película. La ruta de acceso será 
+        * **GET getMoviesGenre**: Obtenemos un listado de las películas filtrado por el genero de la película. La ruta de acceso será 
         ````
         /movies/genre/:genre
         ````
 
     * **seriesControllers.js**: En este archivo creamos las funciones de cada endpoint:
 
-        * **getSeriesID**: Obtenemos una serie por su ID. 
+        * **GET getSeriesID**: Obtenemos una serie por su ID. 
         
         La ruta de acceso será 
         ````
@@ -37,7 +37,7 @@
         ````
         <br>
 
-        * **getSeriesTopRated**: Obtenemos las series más valoradas. 
+        * **GET getSeriesTopRated**: Obtenemos las series más valoradas. 
         
         La ruta de acceso será 
         ````
@@ -45,7 +45,7 @@
         ````
         <br>
 
-        * **getSeriestitle**: Obtenemos un listado de las series filtrado por el titulo. 
+        * **GET getSeriestitle**: Obtenemos un listado de las series filtrado por el titulo. 
         
         La ruta de acceso será 
         
@@ -55,7 +55,7 @@
 
         <br>
 
-        * **getSeriesEmitido**: Obtenemos un listado de las series que tendrán un capítulo en los próximos 7 días. 
+        * **GET getSeriesEmitido**: Obtenemos un listado de las series que tendrán un capítulo en los próximos 7 días. 
         
         La ruta de acceso será 
         ````
@@ -63,7 +63,7 @@
         ````
         <br>
 
-        * **getSeriesCinema**: Obtenemos un listado de las series que tendrán un pase en un cine o teatro. 
+        * **GET getSeriesCinema**: Obtenemos un listado de las series que tendrán un pase en un cine o teatro. 
         
         La ruta de acceso será 
         ````
@@ -73,7 +73,7 @@
         <br>
 
     * **UsersControllers.js**: En este archivo creamos las funciones de cada endpoint:
-        * **register**: Gestionamos el registro en nuestra API. Existe un mínimo de seguridad en la contraseña creada (mínimo 8 caracteres). 
+        * **POST register**: Gestionamos el registro en nuestra API. Existe un mínimo de seguridad en la contraseña creada (mínimo 8 caracteres). 
         
         Deberemos pasarle por el body como mínimo:
         ````
@@ -90,7 +90,7 @@
         ````
         <br>
 
-        * **login**: Gestionamos el login en nuestra API.
+        * **POST login**: Gestionamos el login en nuestra API.
         
         Deberemos pasarle por el body:
         ````
@@ -105,19 +105,19 @@
 
         <br>
 
-        * **findAll**: Obtenemos un listado de todos los usuarios (securizado para que solo pueda acceder un administrador).La ruta de acceso será 
+        * **GET findAll**: Obtenemos un listado de todos los usuarios (securizado para que solo pueda acceder un administrador).La ruta de acceso será 
         ````
         /users/all
         ````
         <br>
 
-        * **findcurrentuser**: Obtenemos la información del usuario que esté logueado. La ruta de acceso será 
+        * **GET findcurrentuser**: Obtenemos la información del usuario que esté logueado. La ruta de acceso será 
         ````
         /users/findcurrentuser
         ````
         <br>
 
-        * **modify**: Actualizamos el usuario que esté logueado. Deberemos pasarle por el body:
+        * **PUT modify**: Actualizamos el usuario que esté logueado. Deberemos pasarle por el body:
         ````
          email
          ````
@@ -135,7 +135,7 @@
         
         <br>
         
-        * **deleteUser**: Eliminamos un usuario por su email. Solamente lo puede hacer el Admin. La ruta de acceso será 
+        * **DELETE deleteUser**: Eliminamos un usuario por su email. Solamente lo puede hacer el Admin. La ruta de acceso será 
         ````
         /users/deleteprofile/:email
         ````
@@ -143,14 +143,14 @@
         <br>
 
     * **loansControllers.js**: En este archivo creamos las funciones de cada endpoint:
-        * **allloans**: Obtenemos un listado de todos los pedidos realizados (securizado para que solo pueda acceder un administrador).La ruta de acceso será 
+        * **GET allloans**: Obtenemos un listado de todos los pedidos realizados (securizado para que solo pueda acceder un administrador).La ruta de acceso será 
         ````
         /loans/alloans/
         ````
 
         <br>
 
-        * **newloan**: Creamos un pedido nuevo. 
+        * **POST newloan**: Creamos un pedido nuevo. 
         
         Deberemos pasarle por el body:
 
@@ -167,14 +167,14 @@
 
         <br>
 
-        * **myloans**: El usuario podrá ver su lista de pedidos. La ruta de acceso será 
+        * **GET myloans**: El usuario podrá ver su lista de pedidos. La ruta de acceso será 
         ````
         /loans/myloans/
         ````
 
         <br>
 
-        * **modifyloan**: El usuario podrá modificar su pedido.
+        * **PUT modifyloan**: El usuario podrá modificar su pedido.
         
         Deberemos pasarle por body:
         
