@@ -23,6 +23,9 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     date_of_loan: DataTypes.DATE,
+    date_of_return: DataTypes.DATE,
+
+    price:DataTypes.FLOAT,
 
     userIdUser: {
       type: DataTypes.INTEGER,
