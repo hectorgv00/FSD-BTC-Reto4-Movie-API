@@ -37,7 +37,6 @@ const assertEmailIsValid = (email) => {
   // must validate a valid email
   const emailRegex =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  // return emailRegex.test(email);
   const isValid = email.match(emailRegex);
   if (!isValid) {
     throw new Error("Email is invalid");

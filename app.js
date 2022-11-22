@@ -6,14 +6,29 @@ const router = require('./router');
 const morgan = require('morgan');
 const { sequelize } = require('./models');
 const logMiddleware = require('./middleware/log.middleware');
+const cors = require("cors");
 
-const PORT =3000;
+//Config Cors Options
+var corsOptions = {
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204
+  };
 
-
+  
+  
+  
+  const PORT =3000;
+  
+  
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(router);
 app.use(morgan('dev'));
 app.use(logMiddleware)
+
+
 
 
 
